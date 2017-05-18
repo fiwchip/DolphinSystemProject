@@ -58,10 +58,10 @@ public class Login {
         char menu = (char)(rightsID + '0');
         switch(menu) {
             case '1' :
-                ChairmanMenu.main(args);
+                ChairmanMenu.chairmanMenu();
                 break;
             case '2' :
-                TreasurerMenu.main(args);
+                TreasurerMenu.treasurerMenu();
                 break;
             case '3' :
                 break;

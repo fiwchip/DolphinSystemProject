@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class ChairmanMenu {
     
-    public static void main(String[] args) {
+    public static void chairmanMenu() {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> userList = new ArrayList<User>();
        
@@ -63,7 +63,7 @@ public class ChairmanMenu {
                     /** 
                      Systemet spørger om man vil tilføje et nyt medlem til ArrayListen.
                      **/
-                    System.out.println("Vil du tilføje et medlem til listen? true/false");
+                    System.out.println("Vil du tilføje et medlem? true/false");
                     addMemberBoolean = sc.nextBoolean();
 
                     boolean memberIDNotTaken = true;

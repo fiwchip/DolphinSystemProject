@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DolphinSystem;
+package login;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.*;
@@ -11,7 +11,7 @@ import java.io.*;
 public class TreasurerMenu {
 
 
-    public static void main(String args[]) {
+    public static void treasurerMenu() {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> userList = new ArrayList<User>();
         try {

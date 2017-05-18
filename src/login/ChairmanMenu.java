@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DolphinSystem;
+package login;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,7 +15,7 @@ import java.util.Scanner;
  */
 public class ChairmanMenu {
     
-    public static void main(String args[]) {
+    public static void chairmanMenu() {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> userList = new ArrayList<User>();
        
@@ -53,7 +53,7 @@ public class ChairmanMenu {
                      /** 
                     Diverse variable der bruges når nyt medlem skal ind i ArrayListen.
                     **/
-                    String userResponse = "";
+                    String addUserResponse = "";
                     String firstName, lastName, email, gender, password;
                     int age, memberID;
                     boolean payStatus;
@@ -66,7 +66,7 @@ public class ChairmanMenu {
                     System.out.println("Vil du tilføje et medlem? true/false");
                     addMemberBoolean = sc.nextBoolean();
 
-                    
+                    boolean memberIDNotTaken = true;
 
                     if(addMemberBoolean == true) 
                     {
@@ -75,19 +75,17 @@ public class ChairmanMenu {
                                         "\nFørste ciffer bestemmer brugerrettighedder." +
                                         "\n1 = Formand, 2 = Kasserer, 3 = Træner, 4 = Svømmer.");
                             memberID = sc.nextInt();
-// Koden nedenunder virker ikke pt.
-//                            boolean memberIDNotTaken = true;
-//                            do {
-//
-//                            int searchListLength = userList.size();
-//                            for (int i = 0; i < searchListLength; i++) {
-//                                if(userList.get(i).getMemberID()==(memberID)) {
-//                                    System.out.println("MedlemsID er allerede i brug, vælg et nyt.");
-//                                    memberID = sc.nextInt();
-//                                    memberIDNotTaken = false;
-//                                } 
-//                            }
-//                          } while(memberIDNotTaken == true);
+                            do {
+
+                            int searchListLength = userList.size();
+                            for (int i = 0; i < searchListLength; i++) {
+                                if(userList.get(i).getMemberID()==(memberID)) {
+                                    System.out.println("MedlemsID er allerede i brug, vælg et nyt.");
+                                    memberID = sc.nextInt();
+                                    memberIDNotTaken = false;
+                                } 
+                            }
+                          } while(memberIDNotTaken == true);
                         System.out.println("Sæt password");
                         password = sc.next();
                         System.out.println("Fornavn:");
@@ -106,8 +104,8 @@ public class ChairmanMenu {
                         userList.add(u1);
 
                         System.out.println("Vil du tilføje et medlem mere? j/n");
-                        userResponse = sc.next();
-                        }while(userResponse.equalsIgnoreCase("j"));
+                        addUserResponse = sc.next();
+                        }while(addUserResponse.equalsIgnoreCase("j"));
                     }
 
                     /** 

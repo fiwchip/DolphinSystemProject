@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DolphinSystem;
+package login;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Nikolaj Reichardt
  */
-public class DolphinSystem {
+public class Login {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
         Scanner sc = new Scanner(System.in);
@@ -37,7 +37,7 @@ public class DolphinSystem {
          * Hvis systemet ikke finder kombinationen skal brugeren forsøge login igen.
          **/
         do {
-            System.out.println("Login." + 
+            System.out.println("Login: " + 
                     "\nMedlems ID: ");
             loginMemberID = sc.nextInt();
             System.out.println("Password: ");
@@ -58,10 +58,10 @@ public class DolphinSystem {
         char menu = (char)(rightsID + '0');
         switch(menu) {
             case '1' :
-                ChairmanMenu.main(null);
+                ChairmanMenu.chairmanMenu();
                 break;
             case '2' :
-                TreasurerMenu.main(null);
+                TreasurerMenu.treasurerMenu();
                 break;
             case '3' :
                 break;

@@ -16,7 +16,7 @@ import java.util.List;
 public class Login {
 
     /**
-     * @param args the command line arguments
+     * pt. sker der ikke det helt store her, endnu.
      */
     public static void main(String[] args) throws FileNotFoundException, IOException {
         ArrayList<User> userList = new ArrayList<User>();

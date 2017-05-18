@@ -44,7 +44,7 @@ public class createMember {
          Diverse variable der bruges når nyt medlem skal ind i ArrayListen.
          **/
         String addUserResponse = "";
-        String firstName, lastName, email, gender;
+        String firstName, lastName, email, gender, password;
         int age, memberID;
         boolean payStatus;
         
@@ -59,8 +59,10 @@ public class createMember {
         if(addMemberBoolean == true) 
         {
             do { 
-            System.out.println("Angiv medlemsid: ");
+            System.out.println("Sæt medlemsid: ");
             memberID = sc.nextInt();
+            System.out.println("Sæt password");
+            password = sc.next();
             System.out.println("Fornavn:");
             firstName = sc.next();
             System.out.println("Efternavn:");
@@ -73,7 +75,7 @@ public class createMember {
             gender = sc.next();
             System.out.println("Har medlemmet betalt? (true/false)");
             payStatus = sc.nextBoolean();
-            User u1 = new User(memberID, firstName, lastName, age, email, gender, payStatus);
+            User u1 = new User(memberID, password, firstName, lastName, age, email, gender, payStatus);
             userList.add(u1);
                
             System.out.println("Vil du tilføje et medlem mere? j/n");

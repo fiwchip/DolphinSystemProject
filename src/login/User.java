@@ -12,6 +12,7 @@ import java.io.Serializable;
  */
 public class User implements Serializable {
     private int memberID;
+    private String password;
     private String firstName;
     private String lastName;
     private int age;
@@ -19,9 +20,10 @@ public class User implements Serializable {
     private String gender;
     private boolean payStatus;
     
-    public User(int memberID, String firstName, String lastName, int age, String email, String gender, boolean payStatus)
+    public User(int memberID, String password, String firstName, String lastName, int age, String email, String gender, boolean payStatus)
     {
         this.memberID = memberID;
+        this.password = password;
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -48,6 +50,14 @@ public class User implements Serializable {
     public int getMemberID()
     {
         return this.memberID;
+    }
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
+    public String getPassword()
+    {
+        return this.password;
     }
     public void setFirstName(String firstName)
     {

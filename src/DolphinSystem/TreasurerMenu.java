@@ -11,7 +11,7 @@ import java.io.*;
 public class TreasurerMenu {
 
 
-    public static void treasurerMenu() {
+    public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> userList = new ArrayList<User>();
         try {

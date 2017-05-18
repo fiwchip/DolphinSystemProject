@@ -7,7 +7,6 @@ package login;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.List;
 
 /**
  *
@@ -15,9 +14,6 @@ import java.util.List;
  */
 public class Login {
 
-    /**
-     * pt. sker der ikke det helt store her, endnu.
-     */
     public static void main(String[] args) throws FileNotFoundException, IOException {
         Scanner sc = new Scanner(System.in);
         ArrayList<User> userList = new ArrayList<User>();
@@ -34,6 +30,12 @@ public class Login {
 
         boolean loginSuccess = false;
         int loginMemberID;
+        /** 
+         Login:
+         Brugeren indtaster et medlems ID og et password. Systemet søger
+         * derefter igennem ArrayListen til den finder det medlemsID & password kombination.
+         * Hvis systemet ikke finder kombinationen skal brugeren forsøge login igen.
+         **/
         do {
             System.out.println("Login: " + 
                     "\nMedlems ID: ");
@@ -49,7 +51,6 @@ public class Login {
                       } 
 
             }
-            //System.out.println(userList.toString());
         } while (loginSuccess == false);
         
         int firstDigit = loginMemberID/1000;
@@ -62,6 +63,8 @@ public class Login {
             case '2' :
                 break;
             case '3' :
+                break;
+            case '4' :
                 break;
         
         

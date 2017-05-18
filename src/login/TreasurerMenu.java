@@ -24,47 +24,7 @@ public class TreasurerMenu {
         } catch(Exception ex) {
             ex.printStackTrace();
         }   
-        
-/**Alt dette nedenunder er ikke længere nødvendigt da det bliver klaret af
-   createMember.java, og var egentligt kun brugt til at teste selve menuen med.
- **/       
-//        String addUserResponse = "";
-//        String firstName, lastName, email, gender;
-//        int age, memberID;
-//        boolean payStatus;
-//        
-//        boolean addMemberBoolean;
-//        
-//        System.out.println("Vil du tilføje et medlem til listen? true/false");
-//        addMemberBoolean = sc.nextBoolean();
-//        
-//        if(addMemberBoolean == true) 
-//        {
-//            do { 
-//            System.out.println("Angiv medlemsid: ");
-//            memberID = sc.nextInt();
-//            System.out.println("Fornavn:");
-//            firstName = sc.next();
-//            System.out.println("Efternavn:");
-//            lastName = sc.next();
-//            System.out.println("Alder:");
-//            age = sc.nextInt();
-//            System.out.println("E-mail:");
-//            email = sc.next();
-//            System.out.println("Køn:");
-//            gender = sc.next();
-//            System.out.println("Har medlemmet betalt? (true/false)");
-//            payStatus = sc.nextBoolean();
-//            User u1 = new User(memberID, firstName, lastName, age, email, gender, payStatus);
-//            userList.add(u1);
-//               
-//            System.out.println("Vil du tilføje et medlem mere? j/n");
-//            addUserResponse = sc.next();
-//            }while(addUserResponse.equalsIgnoreCase("j"));
-//        }
-//        
-//        System.out.println(userList.toString());
-        
+                
         
         char menuChoice;
         boolean choiceLoop = true;  

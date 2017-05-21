@@ -66,7 +66,7 @@ public class TreasurerMenu {
                      System.out.println("betalt kontingent? (j/n)");
                      betaltKontingent = sc.next().charAt(0);
                      if (betaltKontingent == 'j') {
-                         memberList.get(i).sethasPaid(true);
+                         memberList.get(i).setHasPaid(true);
                      }
                      
                  }

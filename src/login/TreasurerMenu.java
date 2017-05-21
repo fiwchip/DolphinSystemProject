@@ -13,12 +13,12 @@ public class TreasurerMenu {
 
     public static void treasurerMenu() {
         Scanner sc = new Scanner(System.in);
-        ArrayList<User> userList = new ArrayList<User>();
+        ArrayList<UserOld> userList = new ArrayList<UserOld>();
         try {
             FileInputStream fis = new FileInputStream("memberList.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            userList = (ArrayList<User>)ois.readObject();
+            userList = (ArrayList<UserOld>)ois.readObject();
 
             ois.close();
         } catch(Exception ex) {

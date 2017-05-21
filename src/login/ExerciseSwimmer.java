@@ -1,7 +1,9 @@
+package login;
+
 public class ExerciseSwimmer extends Member {
 
     public ExerciseSwimmer(String firstName, String surName, String email, String birthDate, String memberID,
-                        String password, boolean isFemale, boolean isTrainer, boolean isActive, double fee,) {
+                        String password, boolean isFemale, boolean isTrainer, boolean isActive, double fee, boolean hasPaid) {
         super(firstName);
         super(surName);
         super(email);
@@ -12,6 +14,7 @@ public class ExerciseSwimmer extends Member {
         super(isTrainer);
         super(isActive);
         super(fee);
+        super(hasPaid);
     }
 
 }

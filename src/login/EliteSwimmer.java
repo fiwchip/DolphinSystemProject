@@ -1,3 +1,5 @@
+package login;
+
 public class EliteSwimmer extends Member {
 
     private boolean butterfly;
@@ -17,10 +19,10 @@ public class EliteSwimmer extends Member {
     private boolean marathon10K;
     private double bestTimeMarathon10K;
     private boolean dogPaddle;
-    private double bestTimedDogPaddle;
+    private double bestTimeDogPaddle;
 
     public EliteSwimmer(String firstName, String surName, String email, String birthDate, String memberID,
-                        String password, boolean isFemale, boolean isTrainer, boolean isActive, double fee,) {
+                        String password, boolean isFemale, boolean isTrainer, boolean isActive, double fee, boolean hasPaid) {
         super(firstName);
         super(surName);
         super(email);
@@ -31,6 +33,7 @@ public class EliteSwimmer extends Member {
         super(isTrainer);
         super(isActive);
         super(fee);
+        super(hasPaid);
     }
 
     public void setIsActive() {
@@ -81,7 +84,7 @@ public class EliteSwimmer extends Member {
         return bestTimeCrawl;
     }
 
-    public double setBestTimeCrawl(newBestTimeCrawl) {
+    public double setBestTimeCrawl(double newBestTimeCrawl) {
         bestTimeCrawl = newBestTimeCrawl;
     }
 

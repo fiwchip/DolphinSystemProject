@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author Nikolaj Reichardt
  */
-public class User implements Serializable {
+public class UserOld implements Serializable {
     private int memberID;
     private String password;
     private String firstName;
@@ -20,7 +20,7 @@ public class User implements Serializable {
     private String gender;
     private boolean payStatus;
     
-    public User(int memberID, String password, String firstName, String lastName, int age, String email, String gender, boolean payStatus)
+    public UserOld(int memberID, String password, String firstName, String lastName, int age, String email, String gender, boolean payStatus)
     {
         this.memberID = memberID;
         this.password = password;

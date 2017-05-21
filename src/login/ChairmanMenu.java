@@ -107,7 +107,7 @@ public class ChairmanMenu {
                         fee = sc.nextDouble();
                         System.out.println("Har medlemmet betalt? (true/false)");
                         hasPaid = sc.nextBoolean();
-                        Member u1 = new Member(String firstName, String surName, String email, String birthDate, int memberID, String password, boolean isFemale, boolean isTrainer, boolean isActive, double fee, boolean hasPaid);
+                        Member u1 = new Member(firstName, surName, email, birthDate, memberID, password, isFemale, isTrainer, isActive, fee, hasPaid);
                         memberList.add(u1);
 
                         System.out.println("Vil du tilføje et medlem mere? j/n");

@@ -17,13 +17,13 @@ public class ChairmanMenu {
     
     public static void chairmanMenu() {
         Scanner sc = new Scanner(System.in);
-        ArrayList<User> userList = new ArrayList<User>();
+        ArrayList<Member> memberList = new ArrayList<Member>();
        
 
         /** 
          FileInputStreamen læser memberList.txt filen, 
          og gendanner userList ArrayListen.
-         Lige nu virker denne dle ikke hvis memberList.txt 
+         Lige nu virker denne del ikke hvis memberList.txt 
          filen er blank.
          Dette bliver forhåbenligt ikke et problem, da der vel altid vil være
          mindst formandens login i filen.
@@ -32,7 +32,7 @@ public class ChairmanMenu {
             FileInputStream fis = new FileInputStream("memberList.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            userList = (ArrayList<User>)ois.readObject();
+            memberList = (ArrayList<Member>)ois.readObject();
 
             ois.close();
         } catch(Exception ex) {
@@ -54,9 +54,10 @@ public class ChairmanMenu {
                     Diverse variable der bruges når nyt medlem skal ind i ArrayListen.
                     **/
                     String addUserResponse = "";
-                    String firstName, lastName, email, gender, password;
-                    int age, memberID;
-                    boolean payStatus;
+                    String firstName, surName, email, password, birthDate;
+                    int memberID;
+                    boolean hasPaid, isFemale, isTrainer, isActive;
+                    double fee;
 
                     boolean addMemberBoolean;
 
@@ -77,9 +78,9 @@ public class ChairmanMenu {
                             memberID = sc.nextInt();
                             do {
 
-                            int searchListLength = userList.size();
+                            int searchListLength = memberList.size();
                             for (int i = 0; i < searchListLength; i++) {
-                                if(userList.get(i).getMemberID()==(memberID)) {
+                                if(memberList.get(i).getMemberID()==(memberID)) {
                                     System.out.println("MedlemsID er allerede i brug, vælg et nyt.");
                                     memberID = sc.nextInt();
                                     memberIDNotTaken = false;
@@ -91,17 +92,23 @@ public class ChairmanMenu {
                         System.out.println("Fornavn:");
                         firstName = sc.next();
                         System.out.println("Efternavn:");
-                        lastName = sc.next();
-                        System.out.println("Alder:");
-                        age = sc.nextInt();
+                        surName = sc.next();
+                        System.out.println("Fødselsdato (dd.mm.yy):");
+                        birthDate = sc.next();
                         System.out.println("E-mail:");
                         email = sc.next();
-                        System.out.println("Køn:");
-                        gender = sc.next();
+                        System.out.println("Er medlemmet en kvinde (true/false)");
+                        isFemale = sc.nextBoolean();
+                        System.out.println("Er medlemmet en træner? (true/false");
+                        isTrainer = sc.nextBoolean();
+                        System.out.println("Er medlemmet aktivt? (true/false");
+                        isActive = sc.nextBoolean();
+                        System.out.println("Angiv medlemmets kontingentsafgift: ");
+                        fee = sc.nextDouble();
                         System.out.println("Har medlemmet betalt? (true/false)");
-                        payStatus = sc.nextBoolean();
-                        User u1 = new User(memberID, password, firstName, lastName, age, email, gender, payStatus);
-                        userList.add(u1);
+                        hasPaid = sc.nextBoolean();
+                        Member u1 = new Member(String firstName, String surName, String email, String birthDate, int memberID, String password, boolean isFemale, boolean isTrainer, boolean isActive, double fee, boolean hasPaid);
+                        memberList.add(u1);
 
                         System.out.println("Vil du tilføje et medlem mere? j/n");
                         addUserResponse = sc.next();
@@ -118,7 +125,7 @@ public class ChairmanMenu {
                     try {
                         FileOutputStream fos = new FileOutputStream("memberList.txt");
                         ObjectOutputStream oos = new ObjectOutputStream(fos);   
-                        oos.writeObject(userList); // write MenuArray to ObjectOutputStream
+                        oos.writeObject(memberList); // write MenuArray to ObjectOutputStream
                         oos.close(); 
                     } catch(Exception ex) {
                         ex.printStackTrace();

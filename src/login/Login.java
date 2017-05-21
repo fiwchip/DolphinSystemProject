@@ -16,12 +16,12 @@ public class Login {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
         Scanner sc = new Scanner(System.in);
-        ArrayList<User> userList = new ArrayList<User>();
+        ArrayList<Member> memberList = new ArrayList<Member>();
         try {
             FileInputStream fis = new FileInputStream("memberList.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            userList = (ArrayList<User>)ois.readObject();
+            memberList = (ArrayList<Member>)ois.readObject();
 
             ois.close();
         } catch(Exception ex) {
@@ -42,10 +42,10 @@ public class Login {
             loginMemberID = sc.nextInt();
             System.out.println("Password: ");
             String loginPassword = sc.next();
-            int searchListLength = userList.size();
+            int searchListLength = memberList.size();
 
             for (int i = 0; i < searchListLength; i++) {
-                      if (userList.get(i).getMemberID()==(loginMemberID) && userList.get(i).getPassword().equals(loginPassword)) {
+                      if (memberList.get(i).getMemberID()==(loginMemberID) && memberList.get(i).getPassword().equals(loginPassword)) {
                           System.out.println("Login godkendt.");
                           loginSuccess = true;
                       } 

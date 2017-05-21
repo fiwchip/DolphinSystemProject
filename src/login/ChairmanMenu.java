@@ -46,31 +46,35 @@ public class ChairmanMenu {
         {
             
             System.out.println("Velkommen formand, hvad vil du i dag?" +
-                    "\n1. Registrer nyt medlem." + "\n2. Rediger medlem" + "\n3. Slet medlem");
+                    "\n1. Registrer nyt medlem." + "\n2. Rediger medlem" + "\n3. Slet medlem" + "\n4. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
                 case '1' :
                      /** 
                     Diverse variable der bruges når nyt medlem skal ind i ArrayListen.
                     **/
-                    String addUserResponse = "";
+                    String addUserResponse; //Holder brugerens svar om hvorvidt tilføj nyt medlem loop skal stoppes (j/n)
                     String firstName, surName, email, password, birthDate;
                     int memberID;
                     boolean hasPaid, isFemale, isTrainer, isActive;
                     double fee;
-
-                    boolean addMemberBoolean;
-
-                    /** 
-                     Systemet spørger om man vil tilføje et nyt medlem til ArrayListen.
-                     **/
-                    System.out.println("Vil du tilføje et medlem? true/false");
-                    addMemberBoolean = sc.nextBoolean();
-
+                    
+                    
+                    /** Gammel kode fra inden menuen havde flere valgmuligheder **/
+//                    String addMemberString;
+//
+//                    /** 
+//                     Systemet spørger om man vil tilføje et nyt medlem til ArrayListen.
+//                     **/
+//                    System.out.println("Vil du tilføje et medlem? j/n");
+//                    addMemberString = sc.next();
+//
+//                    
+//
+//                    if(addMemberString.equalsIgnoreCase("j")); {
+//                    }
+                    
                     boolean memberIDNotTaken = true;
-
-                    if(addMemberBoolean == true) 
-                    {
                         do { 
                             System.out.println("Sæt medlemsid: " + 
                                         "\nFørste ciffer bestemmer brugerrettighedder." +
@@ -99,9 +103,9 @@ public class ChairmanMenu {
                         email = sc.next();
                         System.out.println("Er medlemmet en kvinde (true/false)");
                         isFemale = sc.nextBoolean();
-                        System.out.println("Er medlemmet en træner? (true/false");
+                        System.out.println("Er medlemmet en træner? (true/false)");
                         isTrainer = sc.nextBoolean();
-                        System.out.println("Er medlemmet aktivt? (true/false");
+                        System.out.println("Er medlemmet aktivt? (true/false)");
                         isActive = sc.nextBoolean();
                         System.out.println("Angiv medlemmets kontingentsafgift: ");
                         fee = sc.nextDouble();
@@ -113,7 +117,6 @@ public class ChairmanMenu {
                         System.out.println("Vil du tilføje et medlem mere? j/n");
                         addUserResponse = sc.next();
                         }while(addUserResponse.equalsIgnoreCase("j"));
-                    }
 
                     /** 
                      FileOutputStreamen overskriver hele memberList.txt filen så de nye medlemmer
@@ -130,19 +133,19 @@ public class ChairmanMenu {
                     } catch(Exception ex) {
                         ex.printStackTrace();
                     }
-                    choiceLoop = false;
                     break;
                 case '2' : 
                     choiceLoop = false;
                     break;
                 case '3' :
                     choiceLoop = false;
-                    break;       
-            }
-        
-        
-        
-        
+                    break;   
+                case '4' : 
+                    choiceLoop = false;
+                    break;
+                default : 
+                    System.out.println("Ugyldigt valg, prøv igen.");
+            }   
         }   
     }   
 }

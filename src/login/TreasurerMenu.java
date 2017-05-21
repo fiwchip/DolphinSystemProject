@@ -31,12 +31,11 @@ public class TreasurerMenu {
         while (choiceLoop == true)
         {       
             System.out.println("Velkommen kasserer, hvad vil du i dag?" +
-                "\n1. Check kontingentrestance. " + "\n2. Registrér kontingentbetaling.");
+                "\n1. Check kontingentrestance. " + "\n2. Registrér kontingentbetaling." + "\n3. Luk Dolphin System");
             menuChoice = sc.next().charAt(0);
             switch(menuChoice) {
              case '1' :                
-                System.out.println("Tjek betalinger."
-                        + "\nMedlemmer der ikke har betalt kontingent: ");
+                System.out.println("Medlemmer der ikke har betalt kontingent: ");
                  boolean search = false;
                  int searchListLength = memberList.size();
                  for (int i = 0; i < searchListLength; i++) {
@@ -45,15 +44,15 @@ public class TreasurerMenu {
                       System.out.println("Fornavn: " +memberList.get(i).getFirstName());
                       System.out.println("Efternavn: " +memberList.get(i).getSurName());
                       System.out.println("E-mail: " + memberList.get(i).getEmail());
+                      System.out.println("Kontingentafgift: " + memberList.get(i).getFee());
                       System.out.println("Betalt? " +memberList.get(i).getHasPaid());
                       System.out.println("");
                   }
                 }
                  
-                choiceLoop = false;
                 break;
              case '2' :
-                System.out.println("Indtast medlems ID for det medlems som har betalt:");
+                System.out.println("Indtast medlems ID for det medlem som har betalt:");
                 int paidMemberID = sc.nextInt();
                 int searchListLength1 = memberList.size();
                 char betaltKontingent;
@@ -81,8 +80,10 @@ public class TreasurerMenu {
                     } catch(Exception ex) {
                           ex.printStackTrace();
                     }
-                choiceLoop = false;
                 break;
+             case '3' : 
+                 choiceLoop = false;
+                 break;
              default :
                 System.out.println("Ugyldigt valg, prøv igen.");
             }

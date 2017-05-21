@@ -13,12 +13,12 @@ public class TreasurerMenu {
 
     public static void treasurerMenu() {
         Scanner sc = new Scanner(System.in);
-        ArrayList<UserOld> userList = new ArrayList<UserOld>();
+        ArrayList<Member> memberList = new ArrayList<Member>();
         try {
             FileInputStream fis = new FileInputStream("memberList.txt");
             ObjectInputStream ois = new ObjectInputStream(fis);
 
-            userList = (ArrayList<UserOld>)ois.readObject();
+            memberList = (ArrayList<Member>)ois.readObject();
 
             ois.close();
         } catch(Exception ex) {
@@ -38,14 +38,14 @@ public class TreasurerMenu {
                 System.out.println("Tjek betalinger."
                         + "\nMedlemmer der ikke har betalt kontingent: ");
                  boolean search = false;
-                 int searchListLength = userList.size();
+                 int searchListLength = memberList.size();
                  for (int i = 0; i < searchListLength; i++) {
-                  if (userList.get(i).getPayStatus()==(search)) {
-                      System.out.println("Medlemsid: " + userList.get(i).getMemberID());
-                      System.out.println("Fornavn: " +userList.get(i).getFirstName());
-                      System.out.println("Efternavn: " +userList.get(i).getLastName());
-                      System.out.println("E-mail: " + userList.get(i).getEmail());
-                      System.out.println("Betalt? " +userList.get(i).getPayStatus());
+                  if (memberList.get(i).getHasPaid()==(search)) {
+                      System.out.println("Medlemsid: " + memberList.get(i).getMemberID());
+                      System.out.println("Fornavn: " +memberList.get(i).getFirstName());
+                      System.out.println("Efternavn: " +memberList.get(i).getSurName());
+                      System.out.println("E-mail: " + memberList.get(i).getEmail());
+                      System.out.println("Betalt? " +memberList.get(i).getHasPaid());
                       System.out.println("");
                   }
                 }
@@ -55,18 +55,18 @@ public class TreasurerMenu {
              case '2' :
                 System.out.println("Indtast medlems ID for det medlems som har betalt:");
                 int paidMemberID = sc.nextInt();
-                int searchListLength1 = userList.size();
+                int searchListLength1 = memberList.size();
                 char betaltKontingent;
                 for (int i = 0; i < searchListLength1; i++) {
-                 if (userList.get(i).getMemberID()==(paidMemberID)) {
+                 if (memberList.get(i).getMemberID()==(paidMemberID)) {
                      System.out.println("Har medlems: ");
-                     System.out.println("Medlemsid: " + userList.get(i).getMemberID());
-                     System.out.println("Fornavn: " +userList.get(i).getFirstName());
-                     System.out.println("Efternavn: " +userList.get(i).getLastName());
+                     System.out.println("Medlemsid: " + memberList.get(i).getMemberID());
+                     System.out.println("Fornavn: " +memberList.get(i).getFirstName());
+                     System.out.println("Efternavn: " +memberList.get(i).getSurName());
                      System.out.println("betalt kontingent? (j/n)");
                      betaltKontingent = sc.next().charAt(0);
                      if (betaltKontingent == 'j') {
-                         userList.get(i).setPayStatus(true);
+                         memberList.get(i).sethasPaid(true);
                      }
                      
                  }
@@ -76,7 +76,7 @@ public class TreasurerMenu {
                 try {
                     FileOutputStream fos = new FileOutputStream("memberList.txt");
                     ObjectOutputStream oos = new ObjectOutputStream(fos);   
-                    oos.writeObject(userList); // write MenuArray to ObjectOutputStream
+                    oos.writeObject(memberList); // write MenuArray to ObjectOutputStream
                     oos.close(); 
                     } catch(Exception ex) {
                           ex.printStackTrace();

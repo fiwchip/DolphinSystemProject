@@ -167,7 +167,7 @@ public class ChairmanMenu {
                                         memberList.get(i).setEmail(newEmail);
                                         break;
                                     case '4' :
-                                        System.out.println("Angiv medlemmets nye køn. "
+                                        System.out.println("Angiv medlemmets nye køn."
                                                 + "\n Er medlemmet en kvinde? (true/false)");
                                         boolean newIsFemale = sc.nextBoolean();
                                         memberList.get(i).setIsFemale(newIsFemale);

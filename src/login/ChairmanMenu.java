@@ -61,18 +61,18 @@ public class ChairmanMenu {
                     
                     
                     /** Gammel kode fra inden menuen havde flere valgmuligheder **/
-//                    String addMemberString;
-//
-//                    /** 
-//                     Systemet spørger om man vil tilføje et nyt medlem til ArrayListen.
-//                     **/
-//                    System.out.println("Vil du tilføje et medlem? j/n");
-//                    addMemberString = sc.next();
-//
-//                    
-//
-//                    if(addMemberString.equalsIgnoreCase("j")); {
-//                    }
+                    String addMemberString;
+
+                    /** 
+                     Systemet spørger om man vil tilføje et nyt medlem til ArrayListen.
+                     **/
+                    System.out.println("Vil du tilføje et medlem? j/n");
+                    addMemberString = sc.next();
+
+                    
+
+                    if(addMemberString.equalsIgnoreCase("j")); {
+                    }
                     
                     boolean memberIDNotTaken = true;
                         do { 
@@ -135,7 +135,70 @@ public class ChairmanMenu {
                     }
                     break;
                 case '2' : 
-                    choiceLoop = false;
+                    System.out.println("Indtast medlemsID for det medlem som skal redigeres: ");
+                    int search = sc.nextInt();
+                    int searchListLength = memberList.size();
+                    for (int i = 0; i < searchListLength; i++) {
+                        if (memberList.get(i).getMemberID()==(search)) {
+                            boolean editMemberLoop = true;
+                            while(editMemberLoop == true) {                            
+                                System.out.println("Medlemmets nuværende data: \n");
+                                System.out.println(memberList.get(i).printMember());
+                                System.out.println("");
+                                System.out.println("Hvad vil du redigere?"
+                                        + "\n1. Fornavn. \n2. Efternavn. \n3. Email. \n4. Køn \n5. Træner status. "
+                                        + "\n6. Aktiv/Passiv status. \n7. Kontingentafgift. \n8. Afslut redigering.");
+                            
+                                char editMember = sc.next().charAt(0);                                                   
+                                switch(editMember) {
+                                    case '1' :
+                                        System.out.println("Angiv medlemmets nye fornavn:");
+                                        String newFirstName = sc.next();
+                                        memberList.get(i).setFirstName(newFirstName);
+                                        break;
+                                    case '2' :
+                                        System.out.println("Angiv medlemmets nye efternavn:");
+                                        String newSurName = sc.next();
+                                        memberList.get(i).setSurName(newSurName);
+                                        break;
+                                    case '3' :
+                                        System.out.println("Angiv medlemmets nye email:");
+                                        String newEmail = sc.next();
+                                        memberList.get(i).setEmail(newEmail);
+                                        break;
+                                    case '4' :
+                                        System.out.println("Angiv medlemmets nye køn. "
+                                                + "\n Er medlemmet en kvinde? (true/false)");
+                                        boolean newIsFemale = sc.nextBoolean();
+                                        memberList.get(i).setIsFemale(newIsFemale);
+                                        break;
+                                    case '5' :
+                                        System.out.println("Angiv medlemmets nye status."
+                                                + "\n Er medlemmet en træner?");
+                                        boolean newTrainer = sc.nextBoolean();
+                                        memberList.get(i).setIsTrainer(newTrainer);
+                                        break;
+                                    case '6' :
+                                        System.out.println("Angiv medlemmets nye status."
+                                                + "Er medlemmet aktivt? (true/false)");
+                                        boolean newIsActive = sc.nextBoolean();
+                                        memberList.get(i).setIsActive(newIsActive);
+                                        break;
+                                    case '7' :
+                                        System.out.println("Angiv medlemmets nye kontingentafgift:");
+                                        double newFee = sc.nextDouble();
+                                        memberList.get(i).setFee(newFee);
+                                        break;
+                                    case '8' :
+                                        editMemberLoop = false;
+                                        break;
+                                    default :
+                                        System.out.println("Ugyldigt valg, prøv igen.");
+
+                                }
+                            }
+                        }
+                    }
                     break;
                 case '3' :
                     choiceLoop = false;

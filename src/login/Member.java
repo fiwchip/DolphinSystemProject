@@ -3,6 +3,7 @@ package login;
 import java.io.Serializable;
 
 public class Member implements Serializable {
+    private static final long serialVersionUID = -388040256197985515L;
 
     private String firstName;
     private String surName;
@@ -30,6 +31,21 @@ public class Member implements Serializable {
         this.fee = fee;
         this.hasPaid = hasPaid;
     }
+    
+        public String printMember()
+    {
+        return "Medlems ID: " + memberID +
+        "\nFornavn: " + firstName + 
+        "\nEfternavn: " + surName + 
+        "\nFødselsdato: " + birthDate + 
+        "\nE-mail: " + email + 
+        "\nKvinde?: "+isFemale +
+        "\nTræner?: " +isTrainer +
+        "\nAktivt medlem? : " + isActive +
+        "\nKontingentafgift: " + fee + 
+        "\nBetalt? " + hasPaid;
+    
+    }
 
     public String getFirstName() {
         return firstName;
@@ -37,6 +53,7 @@ public class Member implements Serializable {
 
     public String setFirstName(String newFirstName) {
         firstName = newFirstName;
+        return newFirstName;
     }
 
     public String getSurName() {
@@ -45,6 +62,7 @@ public class Member implements Serializable {
 
     public String setSurName(String newSurName) {
         surName = newSurName;
+        return newSurName;
     }
 
     public String getEmail() {
@@ -53,6 +71,7 @@ public class Member implements Serializable {
 
     public String setEmail(String newEmail) {
         email = newEmail;
+        return newEmail;
     }
 
     public String getBirthDate() {
@@ -61,6 +80,7 @@ public class Member implements Serializable {
 
     public String setBirthDate(String newBirthDate) {
         birthDate = newBirthDate;
+        return newBirthDate;
     }
 
     public int getMemberID() {
@@ -69,6 +89,7 @@ public class Member implements Serializable {
 
     public int setMemberID(int newMemberID) {
         memberID = newMemberID;
+        return newMemberID;
     }
 
     public String getPassword() {
@@ -77,6 +98,7 @@ public class Member implements Serializable {
 
     public String setPassword(String newPassword) {
         password = newPassword;
+        return newPassword;
     }
 
     public boolean getIsFemale() {
@@ -85,6 +107,7 @@ public class Member implements Serializable {
 
     public boolean setIsFemale(boolean newIsFemale) {
         isFemale = newIsFemale;
+        return newIsFemale;
     }
 
     public boolean getIsTrainer() {
@@ -93,6 +116,7 @@ public class Member implements Serializable {
 
     public boolean setIsTrainer(boolean newIsTrainer) {
         isTrainer = newIsTrainer;
+        return newIsTrainer;
     }
 
     public boolean getIsActive() {
@@ -101,14 +125,16 @@ public class Member implements Serializable {
 
     public boolean setIsActive(boolean newIsActive) {
         isActive = newIsActive;
+        return newIsActive;
     }
 
     public double getFee() {
-        return 1600;
+        return fee;
     }
 
     public double setFee(double newFee) {
         fee = newFee;
+        return newFee;
     }
 
     public boolean getHasPaid() {
@@ -117,6 +143,7 @@ public class Member implements Serializable {
 
     public boolean setHasPaid(boolean newHasPaid) {
         hasPaid = newHasPaid;
+        return newHasPaid;
     }
 
 }

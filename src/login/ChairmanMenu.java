@@ -80,9 +80,10 @@ public class ChairmanMenu {
                                         "\nFørste ciffer bestemmer brugerrettighedder." +
                                         "\n1 = Formand, 2 = Kasserer, 3 = Træner, 4 = Svømmer.");
                             memberID = sc.nextInt();
+                            int searchListLength;
                             do {
 
-                            int searchListLength = memberList.size();
+                            searchListLength = memberList.size();
                             for (int i = 0; i < searchListLength; i++) {
                                 if(memberList.get(i).getMemberID()==(memberID)) {
                                     System.out.println("MedlemsID er allerede i brug, vælg et nyt.");

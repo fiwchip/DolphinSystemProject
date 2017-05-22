@@ -20,6 +20,9 @@ public class EliteSwimmer extends Member {
     private double bestTimeMarathon10K;
     private boolean dogPaddle;
     private double bestTimeDogPaddle;
+    private int coachChoice1;
+    private int coachChoice2;
+    private int coachChoice3;
 
     public EliteSwimmer(String firstName, String surName, String email, String birthDate, int memberID,
                         String password, boolean isFemale, boolean isTrainer, boolean isActive, double fee, boolean hasPaid) {
@@ -190,6 +193,32 @@ public class EliteSwimmer extends Member {
     public double setBestTimeDogPaddle(double newBestTimeDogPaddle) {
         bestTimeDogPaddle = newBestTimeDogPaddle;
         return newBestTimeDogPaddle;
+    }
+        public int getCoachChoice1() {
+        return coachChoice1;
+    }
+
+    public int setCoachChoice1(int newCoachChoice1) {
+        coachChoice1 = newCoachChoice1;
+        return newCoachChoice1;
+    }
+
+    public int getCoachChoice2() {
+        return coachChoice2;
+    }
+
+    public int setCoachChoice2(int newCoachChoice2) {
+        coachChoice2 = newCoachChoice2;
+        return newCoachChoice2;
+    }
+
+    public int getCoachChoice3() {
+        return coachChoice3;
+    }
+
+    public int setCoachChoice3(int newCoachChoice3) {
+        coachChoice3 = newCoachChoice3;
+        return newCoachChoice3;
     }
 
 }

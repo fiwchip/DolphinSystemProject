@@ -36,6 +36,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setButterfly(boolean newButterfly) {
         butterfly = newButterfly;
+        return newButterfly;
     }
 
     public double getBestTimeButterfly() {
@@ -44,6 +45,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeButterfly(double newBestTimeButterfly) {
         bestTimeButterfly = newBestTimeButterfly;
+        return newBestTimeButterfly;
     }
 
     public boolean getBreast() {
@@ -52,6 +54,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setBreast(boolean newBreast) {
         breast = newBreast;
+        return newBreast;
     }
 
     public double getBestTimeBreast() {
@@ -60,6 +63,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeBreast(double newBestTimeBreast) {
         bestTimeBreast = newBestTimeBreast;
+        return newBestTimeBreast;
     }
 
     public boolean getCrawl() {
@@ -68,6 +72,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setCrawl(boolean newCrawl) {
         crawl = newCrawl;
+        return newCrawl;
     }
 
     public double getBestTimeCrawl() {
@@ -76,6 +81,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeCrawl(double newBestTimeCrawl) {
         bestTimeCrawl = newBestTimeCrawl;
+        return newBestTimeCrawl;
     }
 
     public boolean getBackCrawl() {
@@ -84,6 +90,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setBackCrawl(boolean newBackCrawl) {
         backCrawl = newBackCrawl;
+        return newBackCrawl;
     }
 
     public double getBestTimeBackCrawl() {
@@ -92,6 +99,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeBackCrawl(double newBestTimeBackCrawl) {
         bestTimeBackCrawl = newBestTimeBackCrawl;
+        return newBestTimeBackCrawl;
     }
 
     public boolean getBackStroke() {
@@ -100,6 +108,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setBackStroke(boolean newBackStroke) {
         backStroke = newBackStroke;
+        return newBackStroke;
     }
 
     public double getBestTimeBackStroke() {
@@ -108,6 +117,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeBackStroke(double newBestTimeBackStroke) {
         bestTimeBackStroke = newBestTimeBackStroke;
+        return newBestTimeBackStroke;
     }
 
     public boolean getMedley200Women() {
@@ -116,6 +126,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setMedley200Women(boolean newMedley200Women) {
         medley200Women = newMedley200Women;
+        return newMedley200Women;
     }
 
     public double getBestTimeMedley200Women() {
@@ -124,6 +135,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeMedley200Women(double newBestTimeMedley200Women) {
         bestTimeMedley200Women = newBestTimeMedley200Women;
+        return newBestTimeMedley200Women;
     }
 
     public boolean getMedley200Men() {
@@ -132,6 +144,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setMedley200Men(boolean newMedley200Men) {
         medley200Men = newMedley200Men;
+        return newMedley200Men;
     }
 
     public double getBestTimeMedley200Men() {
@@ -140,6 +153,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeMedley200Men(double newBestTimeMedley200Men) {
         bestTimeMedley200Men = newBestTimeMedley200Men;
+        return newBestTimeMedley200Men;
     }
 
     public boolean getMarathon10K() {
@@ -148,6 +162,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setMarathon10K(boolean newMarathon10K) {
         marathon10K = newMarathon10K;
+        return newMarathon10K;
     }
 
     public double getBestTimeMarathon10K() {
@@ -156,6 +171,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeMarathon10K(double newBestTimeMarathon10K) {
         bestTimeMarathon10K = newBestTimeMarathon10K;
+        return newBestTimeMarathon10K;
     }
 
     public boolean getDogPaddle() {
@@ -164,6 +180,7 @@ public class EliteSwimmer extends Member {
 
     public boolean setDogPaddle(boolean newDogPaddle) {
         dogPaddle = newDogPaddle;
+        return newDogPaddle;
     }
 
     public double getBestTimeDogPaddle() {
@@ -172,6 +189,7 @@ public class EliteSwimmer extends Member {
 
     public double setBestTimeDogPaddle(double newBestTimeDogPaddle) {
         bestTimeDogPaddle = newBestTimeDogPaddle;
+        return newBestTimeDogPaddle;
     }
 
 }

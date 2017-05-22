@@ -60,19 +60,19 @@ public class ChairmanMenu {
                     double fee;
                     
                     
-                    /** Gammel kode fra inden menuen havde flere valgmuligheder **/
-                    String addMemberString;
-
-                    /** 
-                     Systemet spørger om man vil tilføje et nyt medlem til ArrayListen.
-                     **/
-                    System.out.println("Vil du tilføje et medlem? j/n");
-                    addMemberString = sc.next();
-
-                    
-
-                    if(addMemberString.equalsIgnoreCase("j")); {
-                    }
+//                    /** Gammel kode fra inden menuen havde flere valgmuligheder **/
+//                    String addMemberString;
+//
+//                    /** 
+//                     Systemet spørger om man vil tilføje et nyt medlem til ArrayListen.
+//                     **/
+//                    System.out.println("Vil du tilføje et medlem? j/n");
+//                    addMemberString = sc.next();
+//
+//                    
+//
+//                    if(addMemberString.equalsIgnoreCase("j")); {
+//                    }
                     
                     boolean memberIDNotTaken = true;
                         do { 
@@ -125,21 +125,14 @@ public class ChairmanMenu {
                      med FileInputStream.
                      **/
 
-                    try {
-                        FileOutputStream fos = new FileOutputStream("memberList.txt");
-                        ObjectOutputStream oos = new ObjectOutputStream(fos);   
-                        oos.writeObject(memberList); // write MenuArray to ObjectOutputStream
-                        oos.close(); 
-                    } catch(Exception ex) {
-                        ex.printStackTrace();
-                    }
+                    
                     break;
                 case '2' : 
                     System.out.println("Indtast medlemsID for det medlem som skal redigeres: ");
-                    int search = sc.nextInt();
-                    int searchListLength = memberList.size();
-                    for (int i = 0; i < searchListLength; i++) {
-                        if (memberList.get(i).getMemberID()==(search)) {
+                    int editSearch = sc.nextInt();
+                    int editSearchListLength = memberList.size();
+                    for (int i = 0; i < editSearchListLength; i++) {
+                        if (memberList.get(i).getMemberID()==(editSearch)) {
                             boolean editMemberLoop = true;
                             while(editMemberLoop == true) {                            
                                 System.out.println("Medlemmets nuværende data: \n");
@@ -201,6 +194,21 @@ public class ChairmanMenu {
                     }
                     break;
                 case '3' :
+                    System.out.println("Indtast medlemsID for det medlem som skal slettes: ");
+                    int deleteSearch = sc.nextInt();
+                    int deleteSearchListLength = memberList.size();
+                    for (int i = 0; i < deleteSearchListLength; i++) {
+                        if (memberList.get(i).getMemberID()==(deleteSearch)) {
+                            System.out.println("Er du sikker på at du vil slette dette medlem? (j/n)");
+                            System.out.println(memberList.get(i).printMember());
+                            String deleteMemberConfirm = sc.next();
+                            if (deleteMemberConfirm.equalsIgnoreCase("j")) {
+                                memberList.remove(i);
+                                System.out.println("Medlemmet er blevet slettet.");
+                            }
+                            
+                        }
+                    }
                     choiceLoop = false;
                     break;   
                 case '4' : 
@@ -209,6 +217,14 @@ public class ChairmanMenu {
                 default : 
                     System.out.println("Ugyldigt valg, prøv igen.");
             }   
-        }   
+        } 
+        try {
+                        FileOutputStream fos = new FileOutputStream("memberList.txt");
+                        ObjectOutputStream oos = new ObjectOutputStream(fos);   
+                        oos.writeObject(memberList); // write memberList to ObjectOutputStream
+                        oos.close(); 
+                    } catch(Exception ex) {
+                        ex.printStackTrace();
+                    }
     }   
 }
